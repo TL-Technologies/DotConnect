@@ -68,28 +68,6 @@ namespace GameBug.DotConnect
 
 		private void SetIAPText(string productId)
 		{
-			string text = "";
-
-			#if BBG_IAP
-			UnityEngine.Purchasing.Product product = IAPManager.Instance.GetProductInformation(productId);
-
-			if (product == null)
-			{
-				text = "Product does not exist";
-			}
-			else if (!product.availableToPurchase)
-			{
-				text = "Product not available to purchase";
-			}
-			else
-			{
-				text = "Purchase to unlock - " + product.metadata.localizedPriceString;
-			}
-			#else
-			text = "IAP not enabled";
-			#endif
-
-			iapText.text = text;
 		}
 
 		#endregion

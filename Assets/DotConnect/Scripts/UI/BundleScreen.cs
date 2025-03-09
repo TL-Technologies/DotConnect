@@ -60,11 +60,6 @@ namespace GameBug.DotConnect
 			SetBundleIndex(0);
 
 			ActivePackListContainer = packListContainer;
-
-			if (IAPManager.Exists())
-			{
-				IAPManager.Instance.OnProductPurchased += OnProductPurchased;
-			}
 		}
 
 		public override void Show(bool back, bool immediate)
@@ -215,7 +210,6 @@ namespace GameBug.DotConnect
 						break;
 					case PackUnlockType.IAP:
 						#if BBG_IAP
-						IAPManager.Instance.BuyProduct(packInfo.unlockIAPProductId);
 						#endif
 						break;
 				}

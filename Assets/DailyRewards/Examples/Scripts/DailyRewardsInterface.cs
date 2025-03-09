@@ -75,6 +75,7 @@ namespace GameBugEntertainment
 
             buttonCloseReward.onClick.AddListener(() =>
             {
+                Debug.Log("Close");
 				var keepOpen = dailyRewards.keepOpen;
                 panelReward.SetActive(false);
                 canvas.gameObject.SetActive(keepOpen);

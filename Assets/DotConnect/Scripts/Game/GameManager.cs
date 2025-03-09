@@ -312,8 +312,6 @@ namespace GameBug.DotConnect
 			{
 				case PackUnlockType.Stars:
 					return StarAmount < packInfo.unlockStarsAmount;
-				case PackUnlockType.IAP:
-					return IAPManager.Exists() && !IAPManager.Instance.IsProductPurchased(packInfo.unlockIAPProductId);
 			}
 
 			return false;
