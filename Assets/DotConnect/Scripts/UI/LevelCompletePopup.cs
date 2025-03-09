@@ -69,7 +69,7 @@ namespace GameBug.DotConnect
 
 			if (giftProgressed)
 			{
-				giftProgressText.text = string.Format("{0} / {1}", giftToAmt, numLevelsForGift);
+				//giftProgressText.text = string.Format("{0} / {1}", giftToAmt, numLevelsForGift);
 
 				float fromProgress	= (float)giftFromAmt / (float)numLevelsForGift;
 				float toProgress	= (float)giftToAmt / (float)numLevelsForGift;
@@ -85,9 +85,9 @@ namespace GameBug.DotConnect
 			}
 			else
 			{
-				giftProgressText.text = string.Format("{0} / {1}", giftFromAmt, numLevelsForGift);
+//				giftProgressText.text = string.Format("{0} / {1}", giftFromAmt, numLevelsForGift);
 
-				giftProgressBar.SetProgress((float)giftFromAmt / (float)numLevelsForGift);
+			//	giftProgressBar.SetProgress((float)giftFromAmt / (float)numLevelsForGift);
 			}
 		}
 
@@ -210,7 +210,7 @@ namespace GameBug.DotConnect
 				giftBoxAnimRoutine = null;
 			}
 
-			giftBox.ResetUI();
+			//giftBox.ResetUI();
 
 			UIAnimation.DestroyAllAnimations(starEarnedImage.gameObject);
 			UIAnimation.DestroyAllAnimations(giftAnimBkgFade.gameObject);
