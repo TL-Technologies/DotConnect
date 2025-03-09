@@ -148,7 +148,6 @@ namespace GameBug.DotConnect
 				//MobileAdsManager.Instance.ShowInterstitialAd();
 			}
 			Tutorials.instance.OnLevelStart();
-			CheckForRateUsActivation();
 
 		}
 		public GameObject RateUsScreen;
@@ -175,34 +174,7 @@ namespace GameBug.DotConnect
 				PlayerPrefs.SetInt("MegaDealItems", 1);
 			}
 		}
-
-		void CheckForRateUsActivation()
-		{
-			var currentLevel = ActiveLevelData.LevelIndex + 1;
-			
-			if (PlayerPrefs.GetInt("Rated") == 0 || !PlayerPrefs.HasKey("Rated"))
-			{
-				if (currentLevel == 7)
-				{
-					LeanTween.moveLocalX(RateUsScreen, 0f, 0.5f).setEase(LeanTweenType.animationCurve).setEaseInOutElastic();
-				}
-				if (currentLevel == 30) 
-				{
-					LeanTween.moveLocalX(RateUsScreen, 0f, 0.5f).setEase(LeanTweenType.animationCurve).setEaseInOutElastic();
-				}
-			}
-			if (PlayerPrefs.GetInt("MegaDeal") == 0 || !PlayerPrefs.HasKey("MegaDeal")) 
-			{
-				if (currentLevel == 25)
-				{
-					LeanTween.moveLocalX(InAppMegaDealScreen, 0f, 0.5f).setEase(LeanTweenType.animationCurve).setEaseInOutElastic();
-				}
-				if (currentLevel == 45)
-				{
-					LeanTween.moveLocalX(InAppMegaDealScreen, 0f, 0.5f).setEase(LeanTweenType.animationCurve).setEaseInOutElastic();
-				}
-			}
-		}
+		
 
 		void AnimateLeavesOutSide() 
 		{
@@ -503,11 +475,11 @@ namespace GameBug.DotConnect
 		{
 			if (HintAmount > 0)
 			{
-				hintAmountText.text = HintAmount.ToString();
+				//hintAmountText.text = HintAmount.ToString();
 			}
 			else
 			{
-				hintAmountText.text = "+";
+				//hintAmountText.text = "+";
 			}
 		}
 
